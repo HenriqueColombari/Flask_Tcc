@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Resume</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/welcome.css')}}">
+	<link rel="icon" type="image/gif" href="{{ url_for('static', filename='image/icon.png') }}">
+</head>
+<body>
+
+	<div class="topnav">
+		<a href="http://127.0.0.1:5000/welcome?person={{person}}">Home</a>
+		<a href="http://127.0.0.1:5000/resume?person={{person}}">Resumo</a>
+		<a href="http://127.0.0.1:5000/word_operation?person={{person}}">Operações</a>
+		<a href="http://127.0.0.1:5000/new_author?person={{person}}">Autores P.</a>
+		<a href="http://127.0.0.1:5000/info?person={{person}}">Sobre</a>	
+	</div>
+
+	<div class = "logo">
+		<img class = "img" src="{{ url_for('static', filename='image/logo.png') }}">
+	</div>
+
+<div class="main">
+	<div class="content">
+		<h1 class="name">Olá, {{person['nome']}}</h1><hr style="width: 30%">
+		<p>
+			<a href="http://127.0.0.1:5000/resume?person={{person}}">Criar Resumo, </a>
+			<a href="http://127.0.0.1:5000/word_operation?person={{person}}">Operações com Palavras</a>
+		</p>
+
+		<p>
+			<a href="http://127.0.0.1:5000/new_author?person={{person}}">Autores Personalizados, </a>
+			<a href="http://127.0.0.1:5000/info?person={{person}}">Sobre</a>
+		</p>
+	</div>
+</div>
+</body>
+</html>

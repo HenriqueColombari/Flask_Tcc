@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Resume</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/new_author.css')}}">
+	<link rel="icon" type="image/gif" href="{{ url_for('static', filename='image/icon.png') }}">
+</head>
+<body>
+
+<div class="topnav">
+	<a href="http://127.0.0.1:5000/welcome?person={{person}}">Home</a>
+	<a href="http://127.0.0.1:5000/resume?person={{person}}">Resumo</a>
+	<a href="http://127.0.0.1:5000/word_operation?person={{person}}">Operações</a>
+	<a href="http://127.0.0.1:5000/new_author?person={{person}}">Autores P.</a>
+	<a href="http://127.0.0.1:5000/info?person={{person}}">Sobre</a>	
+</div>
+	
+<div class = "logo">
+	<img class = "img" src="{{ url_for('static', filename='image/logo.png') }}">
+</div>
+
+<form method="POST" action="http://127.0.0.1:5000/new_author?person={{person}}">
+	<div class="main">
+		<div class = "content">
+			<p align="center">
+			Inserir novo Autor Personalizado
+			</p>
+
+			<p align="left">
+				<label for="input_nome">Nome:</label><br>
+				<input type="text" id="input_nome" name="input_nome" value="" required>
+			</p>
+
+			<p align="left">
+				<label for="input_genero">Gênero Literário:</label><br>
+				<input type="text" id="input_genero" name="input_genero" value="" required>
+			</p>
+
+			<input type="hidden" name="method" value="Inserir_Autor">
+			<p align="left"> 	
+	            <input type="submit" value="GO!" /> 
+        	</p>
+		</div>
+	</div>
+</form>
+
+<form method="POST" action="http://127.0.0.1:5000/new_author?person={{person}}"> 
+	<div class="main">
+		<div class = "content">
+			<p align="center">
+			Inserir novo Texto em um Autor Personalizado
+			</p>			
+
+			<p align="left">
+				<label for = "autor">Selecione um Autor(a): </label></br>
+				<select name = "autor" id="autor" required>
+			    <option value = "" selected disabled hidden>Nome</option>
+			    {% for p in places %}
+			  	<option>{{ places[p]["Autor"] }}</option>
+				{% endfor %}
+				</select>
+			</p>
+
+			<p align="left">
+				<label for="input_titulo">Título:</label><br>
+				<input type="text" id="input_titulo" name="input_titulo" value="" required>
+			</p>
+
+			<p align="left">
+				<label for ="input_text">Texto a ser Inserido:</label></br>
+				<textarea id="input_text" name="input_text"></textarea>
+			</p>
+			<input type="hidden" name="method" value="Inserir_Texto">
+			<p align="left"> 	
+	            <input type="submit" value="GO!" /> 
+        	</p>
+		</div>
+	</div>
+</form>
+
+<form method="POST" action="http://127.0.0.1:5000/new_author?person={{person}}"> 
+	<div class="main">
+		<div class = "content">
+			<p align="center">
+			Deletar um Autor Personalizado
+			</p>			
+
+			<p align="left">
+				<label for = "autor">Selecione um Autor(a): </label></br>
+				<select name = "autor" id="autor" required>
+			    <option value = "" selected disabled hidden>Nome</option>
+			    {% for p in places %}
+			  	<option>{{ places[p]["Autor"] }}</option>
+				{% endfor %}
+				</select>
+			</p>
+
+			<p align="left">
+				<label for="input_password">Informe sua senha:</label><br>
+				<input type="password" id="input_password" name="input_password" placeholder="password" value="" required>
+			</p>
+			
+			<input type="hidden" name="method" value="Deletar_Autor">
+
+			<p align="left"> 	
+	            <input type="submit" value="GO!" /> 
+        	</p>
+		</div>
+	</div>
+</form>
+</body>
+</html>

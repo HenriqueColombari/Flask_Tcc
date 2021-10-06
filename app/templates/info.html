@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Resume</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/info.css')}}">
+	<link rel="icon" type="image/gif" href="{{ url_for('static', filename='image/icon.png') }}">
+</head>
+	<body>
+
+		<div class="topnav">
+			<a href="http://127.0.0.1:5000/welcome?person={{person}}">Home</a>
+			<a href="http://127.0.0.1:5000/resume?person={{person}}">Resumo</a>
+			<a href="http://127.0.0.1:5000/word_operation?person={{person}}">Operações</a>
+			<a href="http://127.0.0.1:5000/new_author?person={{person}}">Autores P.</a>
+			<a href="http://127.0.0.1:5000/info?person={{person}}">Sobre</a>	
+		</div>
+
+		<div class = "logo">
+			<img class = "img" src="{{ url_for('static', filename='image/logo.png') }}">
+		</div>
+
+		<div class="main">
+			<div class="info_img_div">
+				<label for="info_img">Autor: Henrique Colombari</label><br>
+				<img name = "info_img" class = "info_img" src="{{ url_for('static', filename='image/profile.png') }}"><br>
+				<label for="info_img">Unaerp, Eng de Computação 2021</label><br><br>
+			</div>
+			
+			<div class = "content">
+				<p align="justify">
+					Construído com Python, CSS, HTML e um tempero de JavaScript, a solução Smart Resume  é parte de um trabalho desenvolvido para o Centro de Ciências Exatas, Naturais e Tecnológicas da Universidade de Ribeirão Preto como parte dos requisitos para obtenção do grau de bacharel em Engenharia de Computação, sob orientação do Prof. Dr. Milton Faria Junior.
+				</p>
+				<p align="justify">
+					Título: Processamento de Linguagem Natural Aplicado a Textos Filosóficos.
+				</p>
+				<p align="justify">
+					Objetivo: Desenvolver um aplicativo utilizando técnicas de Natural Language Processing (NLP) baseados em conceitos como vetorização de palavras, para apoiar a compreensão na leitura de textos filosóficos.
+				</p>
+				<p align="justify">
+					Principais Funcionalidades: <br>
+					Criação de resumos sem perda de informações relevantes. <br>
+					Extração de significado de palavras sob o vocabulário de um autor em específico.  
+				</p>
+				<p align="justify">
+					Mesmo com o foco em textos filosóficos, a utilização dessa solução não se limita a eles, já que nada restringe a realização de um resumo de texto jornalístico com o espaço vetorial criado para o filósofo Immanuel Kant, por exemplo.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
