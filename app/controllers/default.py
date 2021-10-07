@@ -23,11 +23,10 @@ def welcome():
         except:
             return redirect(url_for('login'))
 
-#If someone clicks on login, they are redirected to /result
 @app.route("/result", methods = ["POST", "GET"])
 def result():
-    if request.method == "POST":        #Only if data has been posted
-        result = request.form           #Get the data
+    if request.method == "POST":
+        result = request.form
         email = result["email"]
         password = result["pass"]
 
@@ -55,11 +54,10 @@ def result():
         else:
             return redirect(url_for('login'))
 
-#If someone clicks on register, they are redirected to /register
 @app.route("/register", methods = ["POST", "GET"])
 def register():
-    if request.method == "POST":        #Only listen to POST
-        result = request.form           #Get the data submitted
+    if request.method == "POST":
+        result = request.form
         email = result["email"]
         nome = result["nome"]
         password = result["pass"]
