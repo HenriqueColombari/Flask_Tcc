@@ -8,3 +8,5 @@ Para isso, é criado um espaço vetorial, w2v, com as obras dos respectivos auto
 
 Dentro do contexto da filosofia, a maneira com um autor se relaciona com a linguagem, como ele utiliza seu vocabulário, é íntima e sutil, o objetivo desse trabalho é
 construir o espaço vetorial de cada autor de forma a evitar a perda de informação.
+
+Modelo em funcionamento: https://smartresumehenrique.herokuapp.com/
